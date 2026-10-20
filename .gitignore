@@ -362,3 +362,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /.vs/slnx.sqlite
+/ApiForge.Desktop/obj/Debug/net10.0/ApiForge.Desktop.AssemblyInfo.cs
+/ApiForge.Desktop/obj/Debug/net10.0/ApiForge.Desktop.AssemblyInfoInputs.cache
