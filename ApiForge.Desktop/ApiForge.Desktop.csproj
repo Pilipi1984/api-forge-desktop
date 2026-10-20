@@ -14,16 +14,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ApiForge.Generator" Version="1.0.3" />
     <PackageReference Include="Avalonia" Version="11.3.*" />
     <PackageReference Include="Avalonia.Desktop" Version="11.3.*" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.*" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.*" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(UseLocalApiForge)' == 'true'">
-    <ProjectReference Include="..\ApiForge.Generator\ApiForge.Generator.csproj" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(UseLocalApiForge)' != 'true'">
