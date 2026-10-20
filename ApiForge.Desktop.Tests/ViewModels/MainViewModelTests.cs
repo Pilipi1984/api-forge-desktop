@@ -1,8 +1,9 @@
+using ApiForge.Desktop.Tests.Fakes;
 using ApiForge.Desktop.ViewModels;
 using ApiForge.Domain.Enums;
 using ApiForge.Domain.GeneratedApiSolution;
 
-namespace ApiForge.Tests.DesktopApp
+namespace ApiForge.Desktop.Tests.ViewModels
 {
     /// <summary>
     /// Tests for the <see cref="MainViewModel"/> class.
@@ -341,7 +342,8 @@ namespace ApiForge.Tests.DesktopApp
             Assert.Equal("Shop.zip", _picker.SuggestedZipName);
             Assert.Equal(1, _generator.ZipCalls);
             Assert.Equal(ArchitectureStyle.Hexagonal, _generator.ReceivedOverride);
-            Assert.Equal<byte>([1, 2, 3], await File.ReadAllBytesAsync(zipPath, TestContext.Current.CancellationToken));
+            byte[] fileBytes = await File.ReadAllBytesAsync(zipPath, TestContext.Current.CancellationToken);
+            Assert.Equal<byte>([1, 2, 3], fileBytes);
             Assert.Contains("ZIP guardado", _vm.Status);
         }
 

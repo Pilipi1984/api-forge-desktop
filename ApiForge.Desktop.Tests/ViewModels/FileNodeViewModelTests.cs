@@ -1,7 +1,7 @@
 using ApiForge.Desktop.ViewModels;
 using ApiForge.Domain.GeneratedApiSolution;
 
-namespace ApiForge.Tests.DesktopApp
+namespace ApiForge.Desktop.Tests.ViewModels
 {
     /// <summary>
     /// Tests for the <see cref="FileNodeViewModel"/> class.

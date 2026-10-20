@@ -3,7 +3,7 @@ using ApiForge.Desktop.Services;
 using ApiForge.Domain.Enums;
 using ApiForge.Domain.GeneratedApiSolution;
 
-namespace ApiForge.Tests.DesktopApp
+namespace ApiForge.Desktop.Tests.Fakes
 {
     /// <summary>
     /// Fake file picker whose results are configured by each test.
