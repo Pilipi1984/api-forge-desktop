@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../ApiForge.Desktop.Tests/ApiForge.Desktop.Tests.csproj" Id="38af90a1-b3a0-48ae-a559-260fc622fdbc" />
+  <Project Path="ApiForge.Desktop/ApiForge.Desktop.csproj" />
+</Solution>

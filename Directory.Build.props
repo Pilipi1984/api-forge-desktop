@@ -1,0 +1,30 @@
+<Project>
+  <PropertyGroup>
+    <Authors>Pilar Pérez de Inestrosa Sánchez</Authors>
+    <Copyright>Copyright (c) 2026 Pilar Pérez de Inestrosa Sánchez</Copyright>
+    <RepositoryUrl>https://github.com/Pilipi1984/api-forge-desktop.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/Pilipi1984/api-forge-desktop</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <MinVerTagPrefix>v</MinVerTagPrefix>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+	<MinVerMinimumMajorMinor>1.0</MinVerMinimumMajorMinor>
+	<MinVerDefaultPreReleaseIdentifiers>preview.0</MinVerDefaultPreReleaseIdentifiers>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MinVer" Version="8.0.0" PrivateAssets="all" />
+  </ItemGroup>
+</Project>

@@ -7,9 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <IsPackable>false</IsPackable>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
-    <!-- Directory.Build.props del repo lo activa; aquí no aporta nada -->
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
-    <!-- true = ProjectReference local (dentro del repo); false = paquete NuGet -->
     <UseLocalApiForge Condition="'$(UseLocalApiForge)' == ''">true</UseLocalApiForge>
   </PropertyGroup>
 
