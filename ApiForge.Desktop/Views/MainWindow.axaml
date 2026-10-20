@@ -1,0 +1,53 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ApiForge.Desktop.ViewModels"
+        x:Class="ApiForge.Desktop.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Title="ApiForge Desktop"
+        Width="1100" Height="720" MinWidth="820" MinHeight="520">
+
+  <DockPanel Margin="16">
+
+    <!-- Barra superior -->
+    <Grid DockPanel.Dock="Top" ColumnDefinitions="Auto,*,Auto,Auto" Margin="0,0,0,12">
+      <Button Grid.Column="0" Content="Abrir especificación…" Command="{Binding PickSpecCommand}" />
+      <TextBlock Grid.Column="1" Margin="12,0" VerticalAlignment="Center"
+                 Text="{Binding SpecFileName}" TextTrimming="CharacterEllipsis" />
+      <ComboBox Grid.Column="2" MinWidth="250" Margin="0,0,12,0"
+                ItemsSource="{Binding Architectures}"
+                SelectedItem="{Binding SelectedArchitecture}" />
+      <Button Grid.Column="3" Classes="accent" Content="Generar" Command="{Binding GenerateCommand}" />
+    </Grid>
+
+    <!-- Barra inferior -->
+    <Grid DockPanel.Dock="Bottom" ColumnDefinitions="*,Auto,Auto" Margin="0,12,0,0">
+      <TextBlock Grid.Column="0" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding Status}" />
+      <Button Grid.Column="1" Margin="12,0,8,0" Content="Guardar en carpeta…" Command="{Binding SaveToFolderCommand}" />
+      <Button Grid.Column="2" Content="Guardar .zip…" Command="{Binding SaveZipCommand}" />
+    </Grid>
+
+    <ProgressBar DockPanel.Dock="Bottom" Margin="0,8,0,0"
+                 IsIndeterminate="True" IsVisible="{Binding IsBusy}" />
+
+    <!-- Vista previa -->
+    <Grid ColumnDefinitions="320,6,*">
+      <TreeView Grid.Column="0"
+                ItemsSource="{Binding Tree}"
+                SelectedItem="{Binding SelectedNode, Mode=TwoWay}">
+        <TreeView.DataTemplates>
+          <TreeDataTemplate DataType="vm:FileNodeViewModel" ItemsSource="{Binding Children}">
+            <TextBlock Text="{Binding Name}" />
+          </TreeDataTemplate>
+        </TreeView.DataTemplates>
+      </TreeView>
+
+      <GridSplitter Grid.Column="1" />
+
+      <TextBox Grid.Column="2" IsReadOnly="True" AcceptsReturn="True"
+               TextWrapping="NoWrap"
+               FontFamily="Cascadia Code,Consolas,Menlo,DejaVu Sans Mono,monospace"
+               Text="{Binding PreviewText, Mode=OneWay}" />
+    </Grid>
+
+  </DockPanel>
+</Window>
